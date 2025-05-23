@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+#mapa {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#mapa-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 0.8s ease;
+}
+
+#mapa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: brightness(0.6) contrast(1.2) hue-rotate(-10deg) saturate(0.8);
+}
+
+.marcador {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+.marcador:hover {
+  transform: scale(1.5);
+  z-index: 10;
+}
+
+/* Cores do trânsito */
+.verde { 
+  background-color: rgba(50, 205, 50, 0.8);
+  box-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
+.amarelo { 
+  background-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
+}
+.vermelho { 
+  background-color: rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 5px #f00, 0 0 10px #f00;
+}
+
+/* Pulsação para áreas críticas */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.critico {
+  animation: pulse 1.5s infinite;
+}
+
+#painel-fixo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 260px;
+  background-color: rgba(10, 10, 10, 0.85);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#painel-fixo h3 {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#hora-data {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#hora-atual {
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: bold;
+  color: #4CAF50;
+  text-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+}
+
+#data-atual {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+#info-transito {
+  font-weight: bold;
+}
+
+/* Estilo dinâmico para status de trânsito */
+#info-transito[data-status="Fluido"] { color: limegreen; }
+#info-transito[data-status="Lento"] { color: gold; }
+#info-transito[data-status="Moderado"] { color: orange; }
+#info-transito[data-status="Intenso"] { color: tomato; }
+#info-transito[data-status="Congestionado"] { color: red; }
+#info-transito[data-status="Crítico"] { 
+  color: red; 
+  animation: pulse 1.5s infinite;
+}
+
+#vinheta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.8));
+  display: none;
+  z-index: 3;
+}
+
+#voltar-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.zoom {
+  transform: scale(2);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito de scanlines para dar um toque tecnológico */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      rgba(0, 255, 0, 0.06) 1px, 
+      transparent 1px
+    );
+  background-size: 100% 2px;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.3;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Inteligente GTA San Andreas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="vinheta"></div>
+
+  <!-- Painel fixo de informações -->
+  <div id="painel-fixo">
+    <div id="hora-data">
+      <h2 id="hora-atual">00:00:00</h2>
+      <p id="data-atual">01/01/2023</p>
+    </div>
+    <h3>Informações da Região</h3>
+    <p><strong>Área:</strong> <span id="info-area">---</span></p>
+    <p><strong>Status Trânsito:</strong> <span id="info-transito">---</span></p>
+    <p><strong>Clima:</strong> <span id="info-clima">---</span></p>
+    <p><strong>Umidade:</strong> <span id="info-umidade">---</span></p>
+    <p><strong>Temperatura:</strong> <span id="info-temp">---</span></p>
+    <p><strong>Sensação:</strong> <span id="info-sensacao">---</span></p>
+    <p><strong>Vento:</strong> <span id="info-vento">---</span></p>
+  </div>
+
+  <button id="voltar-btn">Voltar</button>
+
+  <div id="mapa">
+    <div id="mapa-inner">
+      <img src="assets/maps/frontend.png" alt="Mapa GTA" id="mapa-img" />
+
+      <!-- Los Santos -->
+      <div class="marcador vermelho" data-area="Ganton" style="top: 62%; left: 42%;"></div>
+      <div class="marcador amarelo" data-area="Idlewood" style="top: 60%; left: 45%;"></div>
+      <div class="marcador verde" data-area="Jefferson" style="top: 55%; left: 47%;"></div>
+      <div class="marcador vermelho" data-area="East Los Santos" style="top: 58%; left: 50%;"></div>
+      <div class="marcador critico" data-area="Market Station" style="top: 56%; left: 44%;"></div>
+      <div class="marcador amarelo" data-area="Rodeo" style="top: 48%; left: 35%;"></div>
+      <div class="marcador verde" data-area="Vinewood" style="top: 45%; left: 42%;"></div>
+      <div class="marcador vermelho" data-area="Pershing Square" style="top: 52%; left: 46%;"></div>
+      
+      <!-- Aeroportos -->
+      <div class="marcador amarelo" data-area="Aeroporto de Los Santos" style="top: 70%; left: 42%;"></div>
+      <div class="marcador verde" data-area="Aeroporto de Las Venturas" style="top: 25%; left: 25%;"></div>
+      <div class="marcador verde" data-area="Aeroporto de San Fierro" style="top: 30%; left: 65%;"></div>
+      
+      <!-- San Fierro -->
+      <div class="marcador amarelo" data-area="Downtown San Fierro" style="top: 35%; left: 60%;"></div>
+      <div class="marcador verde" data-area="Garcia" style="top: 38%; left: 63%;"></div>
+      <div class="marcador vermelho" data-area="Doherty" style="top: 32%; left: 58%;"></div>
+      
+      <!-- Las Venturas -->
+      <div class="marcador amarelo" data-area="The Strip" style="top: 20%; left: 30%;"></div>
+      <div class="marcador vermelho" data-area="Redsands East" style="top: 25%; left: 35%;"></div>
+      <div class="marcador verde" data-area="Redsands West" style="top: 22%; left: 25%;"></div>
+      
+      <!-- Áreas Rurais -->
+      <div class="marcador verde" data-area="Angel Pine" style="top: 45%; left: 55%;"></div>
+      <div class="marcador verde" data-area="Palomino Creek" style="top: 40%; left: 45%;"></div>
+      <div class="marcador verde" data-area="Blueberry" style="top: 35%; left: 40%;"></div>
+      <div class="marcador verde" data-area="Dillimore" style="top: 50%; left: 35%;"></div>
+      
+      <!-- Pontos de Interesse -->
+      <div class="marcador amarelo" data-area="Mount Chiliad" style="top: 30%; left: 50%;"></div>
+      <div class="marcador verde" data-area="Area 69" style="top: 25%; left: 45%;"></div>
+      <div class="marcador amarelo" data-area="Sherman Dam" style="top: 40%; left: 53%;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

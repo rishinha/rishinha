@@ -1,0 +1,102 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* FUNDO COM SOBREPOSIÇÃO */
+.background-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images5.alphacoders.com/853/thumb-1920-853486.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER DO FORMULÁRIO */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FORMULÁRIO ESTILO GLASS */
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.login-box p {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* CAMPOS DE ENTRADA */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #ccc;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #eee;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4c5baf;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #621cbe62;
+}

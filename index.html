@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login SanCity GPS</title>
+<style>
+  /* Fundo animado com movimento muito suave */
+  @keyframes backgroundFlow {
+    0% {
+      background-position: 50% 50%;
+    }
+    50% {
+      background-position: 51% 49%;
+    }
+    100% {
+      background-position: 50% 50%;
+    }
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://www.mixmods.com.br/wp-content/uploads/2022/10/gta-sa-mod-hd-radar-map-redesigned-dark-redesenho-fixed.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: backgroundFlow 60s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Container do login */
+  .login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 40px 50px 60px;
+    box-shadow: 0 8px 24px rgba(31, 38, 135, 0.25);
+    width: 320px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.7s ease, transform 0.7s ease, opacity 0.7s ease;
+    will-change: transform, opacity, filter;
+  }
+
+  /* Título SanCity GPS */
+  .login-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: #6c63ff;
+    text-shadow:
+      0 0 10px rgba(108, 99, 255, 0.7),
+      0 0 20px rgba(108, 99, 255, 0.5);
+    font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 10px 0 20px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+  }
+
+  input::placeholder {
+    color: #666;
+  }
+
+  button {
+    background: #6c63ff;
+    border: none;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+  }
+
+  button:hover {
+    background: #5848c2;
+  }
+
+  /* Zoom + bloom anim (otimizado) */
+  .zooming {
+    animation: zoomIn 0.7s forwards;
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      filter: drop-shadow(0 0 0 transparent);
+    }
+    100% {
+      transform: scale(10);
+      opacity: 0;
+      filter:
+        drop-shadow(0 0 15px #6c63ff)
+        drop-shadow(0 0 30px #6c63ff)
+        brightness(1.8);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="login-container" id="loginBox">
+    <div class="login-title">SanCity GPS</div>
+    <h2>Entrar</h2>
+    <input type="text" id="username" placeholder="Usuário" autocomplete="off" />
+    <input type="password" id="password" placeholder="Senha" autocomplete="off" />
+    <button id="loginBtn">Entrar</button>
+  </div>
+
+<script>
+  const loginBtn = document.getElementById('loginBtn');
+  const loginBox = document.getElementById('loginBox');
+
+  loginBtn.addEventListener('click', () => {
+    loginBox.classList.add('zooming');
+    setTimeout(() => {
+      window.location.href = 'inicio.html';
+    }, 700);
+  });
+</script>
+</body>
+</html>
